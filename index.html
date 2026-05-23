@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Urban Style Fashion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#fafafa;
+overflow-x:hidden;
+color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:#111;
+}
+
+.logo span{
+color:#ff3e6c;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#222;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff3e6c;
+}
+
+.menu-btn{
+display:none;
+font-size:32px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1400&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+.hero-content{
+max-width:850px;
+animation:fadeUp 1.3s ease;
+}
+
+.hero-content h1{
+font-size:85px;
+line-height:95px;
+margin-bottom:25px;
+font-weight:800;
+}
+
+.hero-content span{
+color:#ff3e6c;
+}
+
+.hero-content p{
+font-size:22px;
+line-height:38px;
+margin-bottom:40px;
+color:#f2f2f2;
+}
+
+.btn{
+display:inline-block;
+padding:16px 38px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+margin:10px;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.btn-primary{
+background:#ff3e6c;
+color:white;
+}
+
+.btn-secondary{
+background:white;
+color:#222;
+}
+
+/* SECTION */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.section-title p{
+font-size:18px;
+color:#666;
+}
+
+/* CATEGORIES */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.category-card{
+position:relative;
+overflow:hidden;
+border-radius:25px;
+height:380px;
+cursor:pointer;
+}
+
+.category-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.category-card:hover img{
+transform:scale(1.08);
+}
+
+.category-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:30px;
+background:linear-gradient(transparent,rgba(0,0,0,0.9));
+color:white;
+}
+
+.category-overlay h3{
+font-size:30px;
+}
+
+/* PRODUCTS */
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.product-card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.product-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-content{
+padding:25px;
+}
+
+.product-content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.product-content p{
+color:#666;
+line-height:28px;
+margin-bottom:15px;
+}
+
+.price{
+font-size:24px;
+font-weight:700;
+color:#ff3e6c;
+}
+
+/* FEATURES */
+
+.features{
+background:#fff0f4;
+border-radius:35px;
+padding:70px 40px;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.feature-card{
+background:white;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.06);
+}
+
+.feature-card h3{
+margin:15px 0;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:25px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+}
+
+/* CONTACT */
+
+.contact{
+background:#111;
+padding:90px 30px;
+border-radius:35px;
+text-align:center;
+color:white;
+}
+
+.contact h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.contact p{
+font-size:20px;
+line-height:36px;
+color:#ddd;
+margin-bottom:35px;
+}
+
+/* FOOTER */
+
+footer{
+padding:30px;
+text-align:center;
+color:#777;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-content h1{
+font-size:58px;
+line-height:70px;
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+padding:16px 20px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-content h1{
+font-size:42px;
+line-height:54px;
+}
+
+.hero-content p{
+font-size:17px;
+line-height:30px;
+}
+
+.section-title h2{
+font-size:36px;
+}
+
+.contact h2{
+font-size:36px;
+}
+
+.btn{
+display:block;
+width:100%;
+max-width:300px;
+margin:15px auto;
+}
+
+section{
+padding:80px 20px;
+}
+
+.gallery img{
+height:240px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+Urban <span>Style</span>
+</div>
+
+<div class="menu-btn">
+☰
+</div>
+
+<div class="nav-links">
+
+<a href="#">Home</a>
+<a href="#categories">Categories</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Fashion That Defines <span>Your Style</span>
+</h1>
+
+<p>
+Premium clothing collections with modern fashion trends,
+stylish outfits and luxury shopping experience.
+</p>
+
+<a href="#products" class="btn btn-primary">
+Shop Now
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Visit Store
+</a>
+
+</div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+<div class="section-title">
+
+<h2>Fashion Categories</h2>
+
+<p>
+Explore our latest fashion collections
+</p>
+
+</div>
+
+<div class="categories">
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-overlay">
+<h3>Men Fashion</h3>
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-overlay">
+<h3>Women Fashion</h3>
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-overlay">
+<h3>Luxury Collection</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<div class="section-title">
+
+<h2>Trending Products</h2>
+
+<p>
+Premium outfits loved by fashion enthusiasts
+</p>
+
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Casual T-Shirt</h3>
+
+<p>
+Comfortable premium cotton t-shirt for daily wear.
+</p>
+
+<div class="price">
+₹999
+</div>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Stylish Jacket</h3>
+
+<p>
+Modern luxury jacket for premium street fashion.
+</p>
+
+<div class="price">
+₹2499
+</div>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-content">
+
+<h3>Elegant Dress</h3>
+
+<p>
+Beautiful modern dress collection for women.
+</p>
+
+<div class="price">
+₹1899
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section>
+
+<div class="features">
+
+<div class="section-title">
+
+<h2>Why Shop With Us?</h2>
+
+</div>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>🚚 Fast Delivery</h3>
+<p>Quick and safe delivery across the city.</p>
+</div>
+
+<div class="feature-card">
+<h3>💎 Premium Quality</h3>
+<p>Luxury fabrics with premium finishing.</p>
+</div>
+
+<div class="feature-card">
+<h3>🔥 Trending Fashion</h3>
+<p>Latest fashion collections updated regularly.</p>
+</div>
+
+<div class="feature-card">
+<h3>🛍 Best Pricing</h3>
+<p>Affordable pricing for premium products.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="section-title">
+
+<h2>Fashion Gallery</h2>
+
+<p>
+Explore our premium fashion styles
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2>Visit Our Fashion Store</h2>
+
+<p>
+
+📍 Vijayawada, Andhra Pradesh
+
+<br><br>
+
+📞 +91 9493342145
+
+<br><br>
+
+🛍 Premium Fashion Collection Available
+
+</p>
+
+<a href="tel:9493342145" class="btn btn-primary">
+Call Now
+</a>
+
+<a href="https://wa.me/919493342145" class="btn btn-secondary">
+WhatsApp Us
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+Urban Style Fashion © 2026 • Premium Shopping Website
+
+</footer>
+
+</body>
+</html>
